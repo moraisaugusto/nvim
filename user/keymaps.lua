@@ -61,10 +61,10 @@ keymap("n", "<C-l>", ":call WinMove('l')<cr>", opts)
 -- keymap("n", "<m-\\>", ":tabonly<cr>", opts)
 -- 
 -- -- Resize with arrows
--- keymap("n", "<C-Up>", ":resize -2<CR>", opts)
--- keymap("n", "<C-Down>", ":resize +2<CR>", opts)
--- keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
--- keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<m-Up>", ":resize -2<CR>", opts)
+keymap("n", "<m-Down>", ":resize +2<CR>", opts)
+keymap("n", "<m-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<m-Right>", ":vertical resize +2<CR>", opts)
 -- 
 -- -- I hate typing these
 -- -- keymap("n", "H", "^", opts)
