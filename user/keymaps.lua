@@ -54,6 +54,7 @@ keymap("n", "<C-k>", ":call WinMove('k')<cr>", opts)
 keymap("n", "<C-l>", ":call WinMove('l')<cr>", opts)
 
 
+
 -- -- Tabs --
 -- keymap("n", "<m-t>", ":tabnew %<cr>", opts)
 -- keymap("n", "<m-y>", ":tabclose<cr>", opts)
@@ -95,18 +96,15 @@ keymap("n", "<C-l>", ":call WinMove('l')<cr>", opts)
 -- keymap("v", "<", "<gv", opts)
 -- keymap("v", ">", ">gv", opts)
 -- 
--- -- Move text up and down
--- -- keymap("v", "<A-j>", ":m .+1<CR>==", opts)
--- -- keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 -- keymap("v", "p", '"_dP', opts)
 -- -- keymap("v", "P", '"_dP', opts)
 -- 
--- -- Visual Block --
--- -- Move text up and down
+
+-- Visual Block --
+-- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
--- -- keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
--- -- keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
 -- 
 -- -- Terminal --
 -- -- Better terminal navigation
@@ -137,8 +135,6 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
 -- keymap("n", "<C-p>", "<cmd>Telescope projects<cr>", opts)
 -- keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
-keymap("n", "<C-l>", "<cmd>vsplit<cr>", opts)
---keymap("n", "<C-j>", "<cmd>hsplit<cr>", opts)
 -- keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
 -- keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
 -- 
@@ -228,7 +224,6 @@ keymap("n", "<C-l>", "<cmd>vsplit<cr>", opts)
 -- return M
 --
 --
-
 
 vim.cmd [[
   function! WinMove(key)
