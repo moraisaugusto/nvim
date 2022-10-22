@@ -50,6 +50,9 @@ return require('packer').startup(function(use)
   -- Key bindings
   use "folke/which-key.nvim"
 
+  -- Telescope - livegrep
+  use "BurntSushi/ripgrep"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
