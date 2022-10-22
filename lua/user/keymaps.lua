@@ -65,6 +65,12 @@ keymap("n", "<m-Up>", ":resize -2<CR>", opts)
 keymap("n", "<m-Down>", ":resize +2<CR>", opts)
 keymap("n", "<m-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<m-Right>", ":vertical resize +2<CR>", opts)
+
+
+
+
+-- -- NvimTree
+keymap("n", "<leader>k", ":NvimTreeToggle<cr>", opts)
 -- 
 -- -- I hate typing these
 -- -- keymap("n", "H", "^", opts)
