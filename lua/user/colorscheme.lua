@@ -1,4 +1,4 @@
-local colorscheme = "onedarker"
+local colorscheme = "gruvbox-material"
 
 vim.g.onedarker_italic_keywords = false
 
