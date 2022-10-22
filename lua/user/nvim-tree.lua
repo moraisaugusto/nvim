@@ -154,4 +154,7 @@ nvim_tree.setup {
     number = false,
     relativenumber = false,
   },
+  remove_keymaps = {
+    "<C-x>",
+  },
 }
