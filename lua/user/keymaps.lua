@@ -29,10 +29,6 @@ keymap("n", "<m-k>", "<C-w>k", opts)
 keymap("n", "<m-l>", "<C-w>l", opts)
 keymap("n", "<m-tab>", "<c-6>", opts)
 
--- Move lines
---keymaps("n", "<m-j>", ":m .+1<cr>==", opts)
---keymaps("n", "<m-k>", ":m .-2<cr>==", opts)
-
 -- Close current buffer
 keymap("n", "<c-x>", ":q<cr>", opts)
 
@@ -53,21 +49,16 @@ keymap("n", "<C-j>", ":call WinMove('j')<cr>", opts)
 keymap("n", "<C-k>", ":call WinMove('k')<cr>", opts)
 keymap("n", "<C-l>", ":call WinMove('l')<cr>", opts)
 
-
-
--- -- Tabs --
+-- Tabs --
 -- keymap("n", "<m-t>", ":tabnew %<cr>", opts)
 -- keymap("n", "<m-y>", ":tabclose<cr>", opts)
 -- keymap("n", "<m-\\>", ":tabonly<cr>", opts)
--- 
+ 
 -- -- Resize with arrows
 keymap("n", "<m-Up>", ":resize -2<CR>", opts)
 keymap("n", "<m-Down>", ":resize +2<CR>", opts)
 keymap("n", "<m-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<m-Right>", ":vertical resize +2<CR>", opts)
-
-
-
 
 -- -- NvimTree
 keymap("n", "<leader>k", ":NvimTreeToggle<cr>", opts)
@@ -93,10 +84,6 @@ keymap("n", "<leader>k", ":NvimTreeToggle<cr>", opts)
 -- 
 
 -- 
--- -- Insert --
--- -- Press jk fast to enter
--- keymap("i", "jk", "<ESC>", opts)
--- 
 -- -- Visual --
 -- -- Stay in indent mode
 -- keymap("v", "<", "<gv", opts)
@@ -107,7 +94,7 @@ keymap("n", "<leader>k", ":NvimTreeToggle<cr>", opts)
 -- 
 
 -- Visual Block --
--- Move text up and down
+-- Move lines
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 
