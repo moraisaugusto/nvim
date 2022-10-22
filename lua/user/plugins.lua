@@ -37,6 +37,19 @@ return require('packer').startup(function(use)
   use "lunarvim/onedarker.nvim"
   use "sainnhe/gruvbox-material"
 
+  -- Marks
+  use "christianchiarulli/harpoon"
+
+  -- Lua development
+  use "nvim-lua/plenary.nvim" -- necessary for telescope
+
+  -- Fuzzy searcher
+  use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope-media-files.nvim"
+
+  -- Key bindings
+  use "folke/which-key.nvim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

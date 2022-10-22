@@ -54,14 +54,28 @@ keymap("n", "<C-l>", ":call WinMove('l')<cr>", opts)
 -- keymap("n", "<m-y>", ":tabclose<cr>", opts)
 -- keymap("n", "<m-\\>", ":tabonly<cr>", opts)
  
--- -- Resize with arrows
+-- Resize with arrows
 keymap("n", "<m-Up>", ":resize -2<CR>", opts)
 keymap("n", "<m-Down>", ":resize +2<CR>", opts)
 keymap("n", "<m-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<m-Right>", ":vertical resize +2<CR>", opts)
 
--- -- NvimTree
+-- NvimTree
 keymap("n", "<leader>k", ":NvimTreeToggle<cr>", opts)
+
+-- Telescope / Fuzzy
+vim.api.nvim_set_keymap(
+  "n",
+  "<tab>",
+  "<cmd>lua require('telescope').extensions.harpoon.marks(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Harpoon'})<cr>",
+  opts
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<s-tab>",
+  "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal'})<cr>",
+  opts
+)
 -- 
 -- -- I hate typing these
 -- -- keymap("n", "H", "^", opts)
