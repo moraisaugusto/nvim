@@ -44,12 +44,14 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
 -- Move/Create Windows 
-keymap("n", "<C-h>", ":call WinMove('h')<cr>", opts)
-keymap("n", "<C-j>", ":call WinMove('j')<cr>", opts)
-keymap("n", "<C-k>", ":call WinMove('k')<cr>", opts)
-keymap("n", "<C-l>", ":call WinMove('l')<cr>", opts)
+keymap("n", "<C-h>", ":call WinMove('h')<CR>", opts)
+keymap("n", "<C-j>", ":call WinMove('j')<CR>", opts)
+keymap("n", "<C-k>", ":call WinMove('k')<CR>", opts)
+keymap("n", "<C-l>", ":call WinMove('l')<CR>", opts)
 
 -- Tabs --
+--keymap("n", "<TAB>", ":bnext<CR>", opts)
+--keymap("n", "<S-TAB>", ":bnext<CR>", opts)
 -- keymap("n", "<m-t>", ":tabnew %<cr>", opts)
 -- keymap("n", "<m-y>", ":tabclose<cr>", opts)
 -- keymap("n", "<m-\\>", ":tabonly<cr>", opts)

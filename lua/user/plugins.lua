@@ -25,7 +25,11 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- LSP
-  use "neovim/nvim-lspconfig"
+  use "neovim/nvim-lspconfig" -- snipper engine
+  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  --use "hrsh7th/cmp-nvim-lsp" -- completion for lsp
 
   -- File Explorer
   use "kyazdani42/nvim-tree.lua"
