@@ -6,4 +6,6 @@ require "user.colorscheme"
 require "user.telescope"
 require "user.harpoon"
 require "user.whichkey"
+require "user.cmd"
 require "user.lsp"
+

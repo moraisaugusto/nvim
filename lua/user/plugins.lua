@@ -18,18 +18,45 @@ vim.cmd [[
   augroup end
 ]]
 
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
+
+-- Have packer use a popup window
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+}
+
 
 -- Install plugins here
 return require('packer').startup(function(use)
   -- Plugin Manager
   use 'wbthomason/packer.nvim'
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- code completion   
+  use "hrsh7th/cmp-buffer" -- buffer completion   
+  use "hrsh7th/cmp-path" -- path completion   
+  use "hrsh7th/cmp-cmdline" -- cmdline completion   
+  use "saadparwaiz1/cmp_luasnip" -- snippet completion
 
   -- LSP
   use "neovim/nvim-lspconfig" -- snipper engine
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  --use "hrsh7th/cmp-nvim-lsp" -- completion for lsp
+  use "hrsh7th/cmp-nvim-lsp" -- completion for lsp
+
+  -- Snippets
+  use "L3MON4D3/LuaSnip" -- LuaSnip
+  use "rafamadriz/friendly-snippets" -- for multiple languages
 
   -- File Explorer
   use "kyazdani42/nvim-tree.lua"
@@ -62,4 +89,4 @@ return require('packer').startup(function(use)
   if PACKER_BOOTSTRAP then
     require('packer').sync()
   end
-end) 
+end)
