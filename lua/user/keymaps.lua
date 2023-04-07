@@ -31,6 +31,7 @@ keymap("n", "<m-tab>", "<c-6>", opts)
 
 -- Close current buffer
 keymap("n", "<c-x>", ":q<cr>", opts)
+keymap("n", ",.", ":bn<cr>", opts)
 
 -- Fast saving
 keymap("n", "<leader>,", ":w<cr>", opts)
