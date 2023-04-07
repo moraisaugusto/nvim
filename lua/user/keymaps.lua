@@ -2,7 +2,6 @@
 local opts = { noremap = true, silent = true }
 
 -- local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -31,6 +30,9 @@ keymap("n", "<m-tab>", "<c-6>", opts)
 
 -- Close current buffer
 keymap("n", "<c-x>", ":q<cr>", opts)
+keymap("n", "<leader>b", ":bp<cr>:bd #<cr>", opts)
+
+-- Change current buffer
 keymap("n", ",.", ":bn<cr>", opts)
 
 -- Fast saving
@@ -56,7 +58,7 @@ keymap("n", "<C-l>", ":call WinMove('l')<CR>", opts)
 -- keymap("n", "<m-t>", ":tabnew %<cr>", opts)
 -- keymap("n", "<m-y>", ":tabclose<cr>", opts)
 -- keymap("n", "<m-\\>", ":tabonly<cr>", opts)
- 
+
 -- Resize with arrows
 keymap("n", "<m-Up>", ":resize -2<CR>", opts)
 keymap("n", "<m-Down>", ":resize +2<CR>", opts)
