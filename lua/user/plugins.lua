@@ -67,6 +67,7 @@ return require('packer').startup(function(use)
   -- Colorschemes
   use "lunarvim/onedarker.nvim"
   use "sainnhe/gruvbox-material"
+  use "LunarVim/Colorschemes"
 
   -- Marks
   use "christianchiarulli/harpoon"
