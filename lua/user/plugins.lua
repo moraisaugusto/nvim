@@ -71,7 +71,7 @@ return require('packer').startup(function(use)
   use "LunarVim/Colorschemes"
 
   -- Marks
-  use "christianchiarulli/harpoon"
+  --use "christianchiarulli/harpoon"
 
   -- Lua development
   use "nvim-lua/plenary.nvim" -- necessary for telescope
