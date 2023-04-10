@@ -8,4 +8,4 @@ require "user.harpoon"
 require "user.whichkey"
 require "user.cmd"
 require "user.lsp"
-
+require "user.treesitter"
