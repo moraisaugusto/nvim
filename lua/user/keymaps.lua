@@ -29,7 +29,7 @@ keymap("n", "<m-l>", "<C-w>l", opts)
 keymap("n", "<m-tab>", "<c-6>", opts)
 
 -- Close current buffer
-keymap("n", "<c-x>", ":q<cr>", opts)
+keymap("n", "<c-x>",  ":bd<CR>", opts)
 keymap("n", "<leader>b", ":bp<cr>:bd #<cr>", opts)
 
 -- Navigate buffers
