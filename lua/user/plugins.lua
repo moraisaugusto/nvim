@@ -92,6 +92,10 @@ return require('packer').startup(function(use)
   -- Surround
   use "kylechui/nvim-surround"
 
+  -- Comment
+  use "numToStr/Comment.nvim"
+  use "JoosepAlviste/nvim-ts-context-commentstring" -- for the context
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
