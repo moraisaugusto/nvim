@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "hrsh7th/cmp-nvim-lsp" -- completion for lsp
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Snippets
   use "L3MON4D3/LuaSnip" -- LuaSnip
@@ -102,6 +103,7 @@ return require('packer').startup(function(use)
   -- Bufferline
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

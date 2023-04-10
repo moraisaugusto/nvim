@@ -78,6 +78,7 @@ keymap("n", "<leader>k", ":NvimTreeToggle<cr>", opts)
 --
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>c", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", opts)
 
 vim.api.nvim_set_keymap(
   "n",
