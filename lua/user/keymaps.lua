@@ -32,6 +32,11 @@ keymap("n", "<m-tab>", "<c-6>", opts)
 keymap("n", "<c-x>", ":q<cr>", opts)
 keymap("n", "<leader>b", ":bp<cr>:bd #<cr>", opts)
 
+-- Navigate buffers
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+
 -- Change current buffer
 keymap("n", ",.", ":bn<cr>", opts)
 
