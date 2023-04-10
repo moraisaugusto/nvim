@@ -98,6 +98,8 @@ local vopts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
+local mappings = {}
+
 local vmappings = {
   ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', "Comment" },
   s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run range" },
