@@ -89,6 +89,11 @@ return require('packer').startup(function(use)
   use {"nvim-treesitter/nvim-treesitter", run= ":TSUpdate"}
   use "p00f/nvim-ts-rainbow"
 
+  -- Autopair
+  --use "windwp/nvim-autopairs"
+  -- Surround
+  use "kylechui/nvim-surround"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
