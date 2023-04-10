@@ -90,9 +90,7 @@ return require('packer').startup(function(use)
   use "p00f/nvim-ts-rainbow"
 
   -- Autopair
-  --use "windwp/nvim-autopairs"
-  -- Surround
-  use "kylechui/nvim-surround"
+  use "windwp/nvim-autopairs"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
