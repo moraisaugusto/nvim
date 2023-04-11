@@ -183,5 +183,19 @@ local mappings = {
   },
 }
 
+-- Turn off italic separator
+local function set_separator_hl()
+  local hl_cmt = vim.api.nvim_get_hl_by_name("Comment", true)
+  local hl_sep = vim.tbl_extend("force", hl_cmt, {italic = false})
+  return vim.api.nvim_set_hl(0, "WhichKeySeparator", hl_sep)
+end
+
+set_separator_hl()
+
+do
+  local group = vim.api.nvim_create_augroup("whichkey_setting", {clear = true})
+  vim.api.nvim_create_autocmd({"ColorScheme"}, {pattern = {"*"}, callback = set_separator_hl, group = group})
+end
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
