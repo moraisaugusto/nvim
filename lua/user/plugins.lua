@@ -5,7 +5,8 @@ local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 ---@diagnostic disable-next-line: missing-parameter
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path}
+  PACKER_BOOTSTRAP = fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim",
+    install_path }
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
@@ -41,22 +42,22 @@ return require('packer').startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- code completion   
-  use "hrsh7th/cmp-buffer" -- buffer completion   
-  use "hrsh7th/cmp-path" -- path completion   
-  use "hrsh7th/cmp-cmdline" -- cmdline completion   
+  use "hrsh7th/nvim-cmp"         -- code completion
+  use "hrsh7th/cmp-buffer"       -- buffer completion
+  use "hrsh7th/cmp-path"         -- path completion
+  use "hrsh7th/cmp-cmdline"      -- cmdline completion
   use "saadparwaiz1/cmp_luasnip" -- snippet completion
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- snipper engine
-  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "neovim/nvim-lspconfig"             -- snipper engine
+  use "williamboman/mason.nvim"           -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "hrsh7th/cmp-nvim-lsp" -- completion for lsp
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "williamboman/nvim-lsp-installer"   -- simple to use language server installer
+  use "hrsh7th/cmp-nvim-lsp"              -- completion for lsp
+  use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
 
   -- Snippets
-  use "L3MON4D3/LuaSnip" -- LuaSnip
+  use "L3MON4D3/LuaSnip"             -- LuaSnip
   use "rafamadriz/friendly-snippets" -- for multiple languages
 
   -- File Explorer
@@ -87,7 +88,7 @@ return require('packer').startup(function(use)
   use "BurntSushi/ripgrep"
 
   -- Treesitter
-  use {"nvim-treesitter/nvim-treesitter", run= ":TSUpdate"}
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use "p00f/nvim-ts-rainbow"
 
   -- Surround

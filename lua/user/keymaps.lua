@@ -30,12 +30,12 @@ keymap("n", "<m-tab>", "<c-6>", opts)
 
 -- Buffers
 -- Close current
-keymap("n", "<c-x>",  ":bd<CR>", opts)
+keymap("n", "<c-x>", ":bd<CR>", opts)
 keymap("n", "<leader>b", ":bp<cr>:bd #<cr>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
--- Change current 
+-- Change current
 keymap("n", ",.", ":bn<cr>", opts)
 
 -- Fast saving
@@ -48,7 +48,7 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
--- Move/Create Windows 
+-- Move/Create Windows
 keymap("n", "<C-h>", ":call WinMove('h')<CR>", opts)
 keymap("n", "<C-j>", ":call WinMove('j')<CR>", opts)
 keymap("n", "<C-k>", ":call WinMove('k')<CR>", opts)
