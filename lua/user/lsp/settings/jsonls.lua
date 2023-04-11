@@ -1,4 +1,9 @@
--- Find more schemas here: https://www.schemastore.org/json/
+local default_schemas = nil
+local status_ok, jsonls_settings = pcall(require, "nlspsettings.jsonls")
+if status_ok then
+  default_schemas = jsonls_settings.get_default_schemas()
+end
+
 local schemas = {
   {
     description = "TypeScript compiler configuration file",
@@ -93,7 +98,8 @@ local schemas = {
     url = "https://json.schemastore.org/commands.json",
   },
   {
-    description = "AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment.",
+    description =
+    "AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment.",
     fileMatch = {
       "*.cf.json",
       "cloudformation.json",
@@ -101,7 +107,8 @@ local schemas = {
     url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.9/schema/cloudformation.schema.json",
   },
   {
-    description = "The AWS Serverless Application Model (AWS SAM, previously known as Project Flourish) extends AWS CloudFormation to provide a simplified way of defining the Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by your serverless application.",
+    description =
+    "The AWS Serverless Application Model (AWS SAM, previously known as Project Flourish) extends AWS CloudFormation to provide a simplified way of defining the Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by your serverless application.",
     fileMatch = {
       "serverless.template",
       "*.sam.json",
@@ -163,19 +170,19 @@ local schemas = {
   },
 }
 
--- local function extend(tab1, tab2)
---   for _, value in ipairs(tab2 or {}) do
---     table.insert(tab1, value)
---   end
---   return tab1
--- end
+local function extend(tab1, tab2)
+  for _, value in ipairs(tab2 or {}) do
+    table.insert(tab1, value)
+  end
+  return tab1
+end
 
 local extended_schemas = extend(schemas, default_schemas)
 
 local opts = {
   settings = {
     json = {
-      schemas = schemas,
+      schemas = extended_schemas,
     },
   },
   setup = {
