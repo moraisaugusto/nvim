@@ -66,11 +66,6 @@ keymap("n", "<m-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<leader>k", ":NvimTreeToggle<cr>", opts)
 
 
--- Telescope / Fuzzy
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>c", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", opts)
-
 -- Move lines
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
