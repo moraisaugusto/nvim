@@ -30,8 +30,8 @@ keymap("n", "<m-tab>", "<c-6>", opts)
 
 -- Buffers
 -- Close current
-keymap("n", "<c-x>", ":bd<CR>", opts)
-keymap("n", "<leader>b", ":bp<cr>:bd #<cr>", opts)
+keymap("n", "<C-x>", ":q<CR>", opts)
+keymap("n", "<C-b>", ":bd <cr>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -69,6 +69,9 @@ keymap("n", "<leader>k", ":NvimTreeToggle<cr>", opts)
 -- Move lines
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+
+-- Clear Highlighted search
+keymap("n", "<space>", ":set hlsearch! hlsearch?<CR>", opts)
 
 -- Helpers
 
