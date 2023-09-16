@@ -108,6 +108,9 @@ return require('packer').startup(function(use)
   -- Lualine
   use "nvim-lualine/lualine.nvim"
 
+  -- ChatGPT
+  use "jackMort/ChatGPT.nvim"
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
