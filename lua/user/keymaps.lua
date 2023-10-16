@@ -73,6 +73,9 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- Clear Highlighted search
 keymap("n", "<space>", ":set hlsearch! hlsearch?<CR>", opts)
 
+-- Remove extra whitespace
+keymap("n", "<leader><space>", ":%s/\\s\\+$<CR>", opts)
+
 -- Helpers
 
 vim.cmd [[

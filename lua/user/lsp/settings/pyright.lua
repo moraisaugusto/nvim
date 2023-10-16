@@ -3,7 +3,10 @@ return {
 
     python = {
       analysis = {
-        typeCheckingMode = "off"
+        typeCheckingMode = "off",
+        autoSeachPaths = true,
+        userLibraryCodeForTypes = true,
+        diagnosticMode = 'openFilesOnly'
       }
     }
 	},
