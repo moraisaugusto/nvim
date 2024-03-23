@@ -89,7 +89,6 @@ return require('packer').startup(function(use)
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-  use "p00f/nvim-ts-rainbow"
 
   -- Surround
   use "kylechui/nvim-surround"
