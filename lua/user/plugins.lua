@@ -113,6 +113,9 @@ return require('packer').startup(function(use)
   -- Aerial
   use "stevearc/aerial.nvim"
 
+  -- Gen - Ollama interface
+  use "David-Kunz/gen.nvim"
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

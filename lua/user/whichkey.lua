@@ -178,8 +178,8 @@ local mappings = {
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
   p = {
-    name = "ChatGPT",
-    e = { "<cmd>ChatGPTEditWithInstructions<cr>", "Edit with instructions" },
+    name = "Gen",
+    e = { "<cmd>Gen<cr>", "Gen - LLM" },
   },
 }
 

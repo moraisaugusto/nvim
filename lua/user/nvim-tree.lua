@@ -3,7 +3,6 @@ if not status_ok then
   return
 end
 
-
 local function custom_nvim_tree_config(bufnr)
   local api = require "nvim-tree.api"
 
