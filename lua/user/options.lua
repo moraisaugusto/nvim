@@ -38,3 +38,13 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+local global_options = {
+  loaded_node_provider = 0,
+  loaded_perl_provider = 0
+}
+
+for k, v in pairs(global_options) do
+  vim.g[k] = v
+end
+
