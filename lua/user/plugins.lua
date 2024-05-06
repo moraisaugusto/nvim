@@ -80,6 +80,7 @@ return require('packer').startup(function(use)
   -- Fuzzy searcher
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
+  use 'nvim-telescope/telescope-ui-select.nvim'
 
   -- Key bindings
   use "folke/which-key.nvim"
@@ -115,7 +116,6 @@ return require('packer').startup(function(use)
 
   -- Gen - Ollama interface
   use "David-Kunz/gen.nvim"
-
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
