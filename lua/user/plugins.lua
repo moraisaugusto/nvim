@@ -117,6 +117,9 @@ return require('packer').startup(function(use)
   -- Gen - Ollama interface
   use "David-Kunz/gen.nvim"
 
+  -- Mini.icons for which-key
+  use "echasnovski/mini.icons"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
