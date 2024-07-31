@@ -54,17 +54,17 @@ return require('packer').startup(function(use)
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use "williamboman/nvim-lsp-installer"   -- simple to use language server installer
   use "hrsh7th/cmp-nvim-lsp"              -- completion for lsp
-  use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
+  use "nvimtools/none-ls.nvim"   -- for formatters and linters
 
   -- Snippets
   use "L3MON4D3/LuaSnip"             -- LuaSnip
   use "rafamadriz/friendly-snippets" -- for multiple languages
 
   -- File Explorer
-  use "kyazdani42/nvim-tree.lua"
+  use "nvim-tree/nvim-tree.lua"
 
   -- Icon
-  use "kyazdani42/nvim-web-devicons"
+  use "nvim-tree/nvim-web-devicons"
 
   -- Colorschemes
   use "lunarvim/onedarker.nvim"
@@ -89,7 +89,6 @@ return require('packer').startup(function(use)
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-  use "p00f/nvim-ts-rainbow"
 
   -- Surround
   use "kylechui/nvim-surround"
@@ -107,6 +106,12 @@ return require('packer').startup(function(use)
 
   -- Lualine
   use "nvim-lualine/lualine.nvim"
+
+  -- Aerial
+  use "stevearc/aerial.nvim"
+
+  -- LLMs
+  use "David-Kunz/gen.nvim"
 
 
   -- Automatically set up your configuration after cloning packer.nvim

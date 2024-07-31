@@ -69,7 +69,7 @@ local setup = {
   },
 }
 
-local opts = {
+local n_opts = {
   mode = "n",     -- NORMAL mode
   prefix = "<leader>",
   buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
@@ -78,8 +78,8 @@ local opts = {
   nowait = true,  -- use `nowait` when creating keymaps
 }
 
-local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+local n_mappings = {
+  ["a"] = { "<cmd>AerialToggle!<cr>", "Aerial" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
@@ -102,6 +102,11 @@ local mappings = {
     s = { "<cmd>PackerSync<cr>", "Sync" },
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
+  },
+  G = {
+    name = "Gen - LLM",
+    c = {"<cmd>Gen Chat<cr>", "Chat"},
+    e = {"<cmd>Gen <cr>", "Gen"},
   },
   g = {
     name = "Git",
@@ -179,6 +184,18 @@ local mappings = {
   },
 }
 
+local v_opts = {
+  mode = "n",     -- VISUAL mode
+--  prefix = "<leader>",
+--  buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+--  silent = true,  -- use `silent` when creating keymaps
+--  noremap = true, -- use `noremap` when creating keymaps
+--  nowait = true,  -- use `nowait` when creating keymaps
+}
+local v_mappings = {
+  ["g"] = { "<cmd>Gen<cr>", "Gen" },
+}
+
 -- Turn off italic separator
 local function set_separator_hl()
   local hl_cmt = vim.api.nvim_get_hl_by_name("Comment", true)
@@ -194,4 +211,4 @@ do
 end
 
 which_key.setup(setup)
-which_key.register(mappings, opts)
+which_key.register(n_mappings, n_opts)

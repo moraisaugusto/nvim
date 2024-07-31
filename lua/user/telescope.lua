@@ -12,7 +12,7 @@ telescope.setup {
 
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
-    path_display = { "smart" },
+--    path_display = { "smart" },
     file_ignore_patterns = {
       ".git/",
       "target/",

@@ -1,14 +1,17 @@
+--require "nvim-tree".setup {}
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
+  vim.notify(nvim_tree, vim.log.levels.ERROR)
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
-end
+--local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+--if not config_status_ok then
+--  --vim.notify(nvim_tree.config, vim.log.levels.ERROR)
+--  return
+--end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+--local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   update_focused_file = {
@@ -56,12 +59,12 @@ nvim_tree.setup {
   view = {
     width = 30,
     side = "left",
-    mappings = {
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h",                  cb = tree_cb "close_node" },
-        { key = "v",                  cb = tree_cb "vsplit" },
-      },
-    },
+    --mappings = {
+    --  list = {
+    --    { key = { "l", "<CR>", "o" }, cb = "edit" },
+    --    { key = "h",                  cb = "close_node" },
+    --    { key = "v",                  cb = "vsplit" },
+    --  },
+    --},
   },
 }

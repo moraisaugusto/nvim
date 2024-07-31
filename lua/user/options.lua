@@ -33,6 +33,9 @@ local options = {
   linebreak = true,                        -- companion to wrap, don't split words
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
+  foldmethod = "expr",
+  foldexpr = "nvim_treesitter#foldexpr()",
+  foldlevel = 99,
 }
 
 for k, v in pairs(options) do
