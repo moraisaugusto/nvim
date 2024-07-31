@@ -25,7 +25,21 @@ local setup = ({
   show_prompt = false, -- Shows the prompt submitted to Ollama.
   show_model = true, -- Displays which model you are using at the beginning of your chat session.
   no_auto_close = false, -- Never closes the window automatically.
-  debug = false -- Prints errors and the command which is run.,
+  debug = false, -- Prints errors and the command which is run.,
+  replace = false
 })
+
+gen.prompts['Enhance_Code'] = {
+  prompt = "Fix the following code. Only ouput the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
+  replace = false,
+  extract = "```$filetype\n(.-)```"
+}
+
+gen.prompts['Change_Code'] = {
+        prompt = "Regarding the following code, $input, only output the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
+        replace = true,
+        extract = "```$filetype\n(.-)```",
+}
+
 
 gen.setup(setup)
