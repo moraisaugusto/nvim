@@ -93,7 +93,8 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
   },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  --[[ ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" }, ]]
+  ["F"] = {"<cmd> lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Find text" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
   p = {
     name = "Packer",
@@ -129,8 +130,8 @@ local mappings = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     d = {
-      "<cmd>Telescope lsp_document_diagnostics<cr>",
-      "Document Diagnostics",
+      "<cmd>Telescope lsp_definitions<cr>",
+      "Definitions",
     },
     w = {
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",

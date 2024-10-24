@@ -78,7 +78,12 @@ return require('packer').startup(function(use)
   use "nvim-lua/plenary.nvim" -- necessary for telescope
 
   -- Fuzzy searcher
-  use "nvim-telescope/telescope.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
+    },
+  }
   use "nvim-telescope/telescope-media-files.nvim"
   use 'nvim-telescope/telescope-ui-select.nvim'
 

@@ -4,8 +4,6 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
-telescope.load_extension "media_files"
-telescope.load_extension "ui-select"
 local icons = require "user.icons"
 --
 telescope.setup {
@@ -200,5 +198,12 @@ telescope.setup {
       filetypes = { "png", "webp", "jpg", "jpeg" },
       find_cmd = "rg", -- find command (defaults to `fd`)
     },
+    live_grep_args = {
+      -- theme = "ivy",
+    },
   },
 }
+
+telescope.load_extension "live_grep_args"
+telescope.load_extension "media_files"
+telescope.load_extension "ui-select"
