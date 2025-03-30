@@ -30,7 +30,7 @@ nvim_tree.setup {
     show_on_dirs = true,
   },
   view = {
-    width = 30,
+    width = 35,
     side = "left",
   },
 }
