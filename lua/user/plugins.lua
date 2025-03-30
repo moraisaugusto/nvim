@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use "williamboman/nvim-lsp-installer"   -- simple to use language server installer
   use "hrsh7th/cmp-nvim-lsp"              -- completion for lsp
-  use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
+  use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }
 
   -- Snippets
   use "L3MON4D3/LuaSnip"             -- LuaSnip
@@ -94,7 +94,13 @@ return require('packer').startup(function(use)
   use "BurntSushi/ripgrep"
 
   -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
 
   -- Surround
   use "kylechui/nvim-surround"

@@ -1,7 +1,8 @@
 local servers = {
   "pyright",
   "jsonls",
-  "lua_ls"
+  "lua_ls",
+  "luarocks"
 }
 
 

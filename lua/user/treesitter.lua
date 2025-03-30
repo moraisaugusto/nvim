@@ -7,7 +7,10 @@ end
 treesitter.setup({
   ensure_installed = "all",
   sync_install = false,
-  ignore_install = { "bicep" }, -- List of parsers to ignore installing
+  ignore_install = {
+    "bicep",
+    "hoon" -- https://github.com/urbit-pilled/tree-sitter-hoon/issues/5
+  }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "bicep" }, -- list of language that will be disabled
