@@ -52,7 +52,6 @@ return require('packer').startup(function(use)
   use "neovim/nvim-lspconfig"             -- snipper engine
   use "williamboman/mason.nvim"           -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use "williamboman/nvim-lsp-installer"   -- simple to use language server installer
   use "hrsh7th/cmp-nvim-lsp"              -- completion for lsp
   use { "L3MON4D3/LuaSnip", run = "make install_jsregexp" }
 
