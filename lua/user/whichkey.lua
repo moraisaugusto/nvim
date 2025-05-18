@@ -29,7 +29,6 @@ local mappings = {
       { "<leader>gp", "<cmd>Gitsigns prev_hunk<cr>", desc = "Git prev hunk", mode = "n" },
       { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Git reset hunk", mode = "n" },
       { "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", desc = "Git reset buffer", mode = "n" },
-      { "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", desc = "Git reset buffer", mode = "n" },
 
       -- NvimTree
       { "<leader>k", "<cmd>:NvimTreeToggle<cr>", desc = "Nvim Tree", mode = "n" },
@@ -45,7 +44,6 @@ local mappings = {
       -- LSP
       { "<leader>l", group = "LSP" },
       { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action"},
-      { "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Definition"},
       { "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Definition"},
 
       -- SEARCH
