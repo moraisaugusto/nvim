@@ -113,7 +113,7 @@ bufferline.setup {
       bg = { attribute = "bg", highlight = "TabLine" },
     },
     tab_close = {
-      -- fg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
+      --fg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
       fg = { attribute = "fg", highlight = "TabLineSel" },
       bg = { attribute = "bg", highlight = "Normal" },
     },
