@@ -45,6 +45,7 @@ local mappings = {
       { "<leader>l", group = "LSP" },
       { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action"},
       { "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Definition"},
+      { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format"},
 
       -- SEARCH
       { "<leader>s", group = "Search" },
