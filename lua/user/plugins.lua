@@ -103,10 +103,6 @@ return require('packer').startup(function(use)
   -- Surround
   use "kylechui/nvim-surround"
 
-  -- Comment
-  use "numToStr/Comment.nvim"
-  use "JoosepAlviste/nvim-ts-context-commentstring" -- for the context
-
   -- Gitsigns
   use "lewis6991/gitsigns.nvim"
 
