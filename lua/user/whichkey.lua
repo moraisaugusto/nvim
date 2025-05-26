@@ -7,6 +7,8 @@ end
 local setup = {
     preset = "modern",
 }
+
+
 local mappings = {
       {
         mode = { "n", "v" }, -- NORMAL and VISUAL mode
@@ -46,6 +48,9 @@ local mappings = {
       { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action"},
       { "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Definition"},
       { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format"},
+      { "<leader>lv",  function()
+        vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text })
+        end, desc = "Diagnostic Virtual Text" },
 
       -- SEARCH
       { "<leader>s", group = "Search" },
