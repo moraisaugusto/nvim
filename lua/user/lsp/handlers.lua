@@ -15,6 +15,8 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
+    virtual_lines = {
+      current_line = true },
     virtual_text = false,
     -- show signs
     signs = {
@@ -81,6 +83,7 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.documentFormattingProvider = false
   end
+  client.server_capabilities.documentFormattingProvider = true
 --  lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end

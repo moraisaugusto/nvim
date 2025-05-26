@@ -49,8 +49,8 @@ local mappings = {
       { "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Definition"},
       { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format"},
       { "<leader>lv",  function()
-        vim.diagnostic.config({ virtual_text = not vim.diagnostic.config().virtual_text })
-        end, desc = "Diagnostic Virtual Text" },
+        vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines })
+        end, desc = "Diagnostic Virtual Lines" },
 
       -- SEARCH
       { "<leader>s", group = "Search" },
