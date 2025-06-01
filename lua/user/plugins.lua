@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-path"         -- path completion
   use "hrsh7th/cmp-cmdline"      -- cmdline completion
   use "saadparwaiz1/cmp_luasnip" -- snippet completion
+  use "onsails/lspkind.nvim"     -- lspkind icons
 
   -- Blink
   use {
