@@ -48,8 +48,28 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-cmdline"      -- cmdline completion
   use "saadparwaiz1/cmp_luasnip" -- snippet completion
 
+  -- Blink
+  use {
+    "saghen/blink.cmp",
+    -- optional: provides snippets for the snippet source
+    requires = { "rafamadriz/friendly-snippets" }
+  }
+
   -- LSP
-  use "neovim/nvim-lspconfig"             -- snipper engine
+  use {
+    "neovim/nvim-lspconfig",
+    requires = {
+      "folke/lazydev.nvim",
+      ft = "lua", -- only load on lua files
+      opts = {
+        library = {
+          -- See the configuration section for more details
+          -- Load luvit types when the `vim.uv` word is found
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        },
+      },
+    }
+  }                                       -- snipper engine
   use "williamboman/mason.nvim"           -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use "hrsh7th/cmp-nvim-lsp"              -- completion for lsp
