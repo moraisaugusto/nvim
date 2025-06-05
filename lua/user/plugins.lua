@@ -50,11 +50,11 @@ return require('packer').startup(function(use)
   use "onsails/lspkind.nvim"     -- lspkind icons
 
   -- Blink
-  use {
-    "saghen/blink.cmp",
-    -- optional: provides snippets for the snippet source
-    requires = { "rafamadriz/friendly-snippets" }
-  }
+  -- use {
+  --   "saghen/blink.cmp",
+  --   -- optional: provides snippets for the snippet source
+  --   requires = { "rafamadriz/friendly-snippets" }
+  -- }
 
   -- LSP
   use {
@@ -141,7 +141,19 @@ return require('packer').startup(function(use)
   use "stevearc/aerial.nvim"
 
   -- Gen - Ollama interface
-  use "David-Kunz/gen.nvim"
+  -- use "David-Kunz/gen.nvim"
+
+  -- Coda companion
+  use {
+    "olimorris/codecompanion.nvim",
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+  }
+
+  -- markdown
+  use "OXY2DEV/markview.nvim"
 
   -- Mini.icons for which-key
   use "echasnovski/mini.icons"
