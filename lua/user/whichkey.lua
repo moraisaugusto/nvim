@@ -18,6 +18,10 @@ local mappings = {
       -- Aerial
       { "<leader>a", "<cmd>AerialToggle!<cr>", desc = "Aerial", mode = "n" },
 
+      -- CODE
+      { "<leader>c", group = "Code" },
+      { "<leader>ci", "<cmd>IBLToggle<cr>", desc = "Indent BlankLine", mode = "n" },
+
       -- FILE
       { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
       { "<leader>F", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", desc = "Find Text", mode = "n" },
@@ -56,12 +60,14 @@ local mappings = {
       { "<leader>s", group = "Search" },
       { "<leader>sb", "<cmd>Telescope git_branches<cr>", desc = "Git Branches"},
       { "<leader>sc", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme"},
+      { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands"},
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Find Help"},
+      { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps"},
       { "<leader>sm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages"},
       { "<leader>sr", "<cmd>Telescope oldfiles<cr>", desc = "Open Recent File"},
       { "<leader>sR", "<cmd>Telescope registers<cr>", desc = "Registers"},
-      { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps"},
-      { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands"},
+      { "<leader>ss", "<cmd>GrugFar<cr>", desc = "Search (GrugFar)"},
+
 
 
 ----[[     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" }, ]]

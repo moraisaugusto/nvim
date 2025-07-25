@@ -106,6 +106,9 @@ return require('packer').startup(function(use)
   use "nvim-telescope/telescope-media-files.nvim"
   use 'nvim-telescope/telescope-ui-select.nvim'
 
+  -- Grug-far
+  use 'MagicDuck/grug-far.nvim'
+
   -- Key bindings
   use "folke/which-key.nvim"
 
@@ -157,6 +160,10 @@ return require('packer').startup(function(use)
 
   -- Mini.icons for which-key
   use "echasnovski/mini.icons"
+
+
+  -- Indent Blankline
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
