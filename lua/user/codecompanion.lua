@@ -63,9 +63,9 @@ local setup = ({
     }
   },
   prompt_library = {
-    ["Generate Docstring"] = {
+    ["Better grammar"] = {
       strategy = "chat",
-      description = "Create useful docstring",
+      description = "Fix grammar phrases",
       opts = {
         index = 11,
         is_slash_cmd = false,
@@ -75,11 +75,11 @@ local setup = ({
       prompts = {
         {
           role = "system",
-          content = "You are an experienced Python developer and you have to create docstrings. Just prints the code with the docstring, nothing else.",
+          content = "You are an english teacher and your main task is to fix grammar mistakes. You will just fix the grammar phrase with no explanation. Just after the correction of grammar phrase, you might add a very short explanation.",
         },
         {
           role = "user",
-          content = "Create a docstring for this ..."
+          content = "Fix the grammar mistake for this..."
         }
       },
     }

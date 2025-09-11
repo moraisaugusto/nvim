@@ -15,11 +15,14 @@ local mappings = {
         { "<leader>q", "<cmd>q<cr>", desc = "Quit" }, -- no need to specify mode since it's inherited
       },
 
-      -- Aerial
-      { "<leader>a", "<cmd>AerialToggle!<cr>", desc = "Aerial", mode = "n" },
+      -- AI - LLM
+      { "<leader>a", group = "AI Actions" },
+      { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "LLM Actions", mode = "n" },
+      { "<leader>ac", "<cmd>CodeCompanionChat<cr>", desc = "LLM Chat", mode = "n" },
 
       -- CODE
       { "<leader>c", group = "Code" },
+      { "<leader>ca", "<cmd>AerialToggle!<cr>", desc = "Aerial", mode = "n" },
       { "<leader>ci", "<cmd>IBLToggle<cr>", desc = "Indent BlankLine", mode = "n" },
 
       -- FILE
