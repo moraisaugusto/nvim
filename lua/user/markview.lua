@@ -7,6 +7,7 @@ end
 
 local opts = {
   preview = {
+    enable = true,
     filetypes = { "markdown", "codecompanion" },
     ignore_buftypes = {},
   },

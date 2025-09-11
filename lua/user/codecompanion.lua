@@ -31,10 +31,58 @@ local setup = ({
         },
       })
     end,
+    qwen25 = function()
+      return require("codecompanion.adapters").extend("ollama", {
+        name = "qwen2.5-coder:14b",
+        opts = {
+          vision = true,
+          stream = true,
+        },
+        schema = {
+          model = {
+            default = "qwen2.5-coder:14b",
+          },
+          num_ctx = {
+            default = 16384,
+          },
+          think = {
+            default = false,
+          },
+          keep_alive = {
+            default = "5m",
+          },
+        },
+      })
+    end,
+
+    qwen25_32 = function()
+      return require("codecompanion.adapters").extend("ollama", {
+        name = "qwen2.5-coder:32b",
+        opts = {
+          vision = true,
+          stream = true,
+        },
+        schema = {
+          model = {
+            default = "qwen2.5-coder:32b",
+          },
+          num_ctx = {
+            default = 16384,
+          },
+          think = {
+            default = false,
+          },
+          keep_alive = {
+            default = "5m",
+          },
+        },
+      })
+    end,
+
   },
   strategies = {
     chat = {
-      adapter = "deepseek",
+      adapter = "qwen25_32",
 
       keymaps = {
         send = {
@@ -46,7 +94,7 @@ local setup = ({
       },
     },
     inline = {
-      adapter = "deepseek",
+      adapter = "qwen25_32",
       keymaps = {
         accept_change = {
           models = { n = "<leader>ca" },
@@ -59,7 +107,7 @@ local setup = ({
       },
     },
     cmd = {
-      adapter = "deepseek",
+      adapter = "qwen25_32",
     }
   },
   prompt_library = {
