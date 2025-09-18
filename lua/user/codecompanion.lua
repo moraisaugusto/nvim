@@ -8,81 +8,60 @@ local setup = ({
   display = {
     diff = {
       enabled = true,
-      close_chat_at = 240, -- Close an open chat buffer if the total columns of your display are less than...
-      layout = "vertical", -- vertical|horizontal split for default provider
+      close_chat_at = 240,  -- Close an open chat buffer if the total columns of your display are less than...
+      layout = "vertical",  -- vertical|horizontal split for default provider
       opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
       provider = "default", -- default|mini_diff
     },
   },
   adapters = {
-    deepseek = function()
-      return require("codecompanion.adapters").extend("ollama", {
-        name = "deepseek-coder-v2", -- Give this adapter a different name to differentiate it from the default ollama adapter
-        schema = {
-          model = {
-            default = "deepseek-coder-v2",
+    http = {
+      deepseek = function()
+        return require("codecompanion.adapters").extend("ollama", {
+          name = "deepseek-coder-v2",
+          schema = {
+            model = {
+              default = "deepseek-coder-v2",
+            },
+            num_ctx = {
+              default = 16384,
+            },
+            num_predict = {
+              default = -1,
+            },
           },
-          num_ctx = {
-            default = 16384,
-          },
-          num_predict = {
-            default = -1,
-          },
-        },
-      })
-    end,
-    qwen25 = function()
-      return require("codecompanion.adapters").extend("ollama", {
-        name = "qwen2.5-coder:14b",
-        opts = {
-          vision = true,
-          stream = true,
-        },
-        schema = {
-          model = {
-            default = "qwen2.5-coder:14b",
-          },
-          num_ctx = {
-            default = 16384,
-          },
-          think = {
-            default = false,
-          },
-          keep_alive = {
-            default = "5m",
-          },
-        },
-      })
-    end,
+        })
+      end,
 
-    qwen25_32 = function()
-      return require("codecompanion.adapters").extend("ollama", {
-        name = "qwen2.5-coder:32b",
-        opts = {
-          vision = true,
-          stream = true,
-        },
-        schema = {
-          model = {
-            default = "qwen2.5-coder:32b",
+      qwen3_coder = function()
+        return require("codecompanion.adapters").extend("ollama", {
+          name = "qwen3-coder:30b",
+          opts = {
+            vision = true,
+            stream = true,
           },
-          num_ctx = {
-            default = 16384,
+          schema = {
+            model = {
+              default = "qwen3-coder:30b",
+            },
+            num_ctx = {
+              default = 16384,
+            },
+            think = {
+              default = false,
+            },
+            keep_alive = {
+              default = "5m",
+            },
           },
-          think = {
-            default = false,
-          },
-          keep_alive = {
-            default = "5m",
-          },
-        },
-      })
-    end,
-
+        })
+      end,
+    },
   },
+
   strategies = {
     chat = {
-      adapter = "qwen25_32",
+      adapter = "qwen3_coder",
 
       keymaps = {
         send = {
@@ -94,7 +73,7 @@ local setup = ({
       },
     },
     inline = {
-      adapter = "qwen25_32",
+      adapter = "qwen3_coder",
       keymaps = {
         accept_change = {
           models = { n = "<leader>ca" },
@@ -107,7 +86,7 @@ local setup = ({
       },
     },
     cmd = {
-      adapter = "qwen25_32",
+      adapter = "qwen3_coder",
     }
   },
   prompt_library = {
