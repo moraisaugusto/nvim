@@ -11,7 +11,7 @@ local setup = ({
       close_chat_at = 240,  -- Close an open chat buffer if the total columns of your display are less than...
       layout = "vertical",  -- vertical|horizontal split for default provider
       opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
-      provider = "default", -- default|mini_diff
+      provider = "inline", -- inline|mini_diff|split
     },
   },
   adapters = {
@@ -35,7 +35,7 @@ local setup = ({
 
       qwen3_coder = function()
         return require("codecompanion.adapters").extend("ollama", {
-          name = "qwen3-coder:30b",
+          name = "qwen3",
           opts = {
             vision = true,
             stream = true,
@@ -61,6 +61,10 @@ local setup = ({
 
   strategies = {
     chat = {
+      icons = {
+        pinned_buffer = " ",
+        watched_buffer = "- ",
+      },
       adapter = "qwen3_coder",
 
       keymaps = {
