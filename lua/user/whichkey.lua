@@ -43,11 +43,13 @@ local mappings = {
       { "<leader>k", "<cmd>:NvimTreeToggle<cr>", desc = "Nvim Tree", mode = "n" },
 
       -- Lazy
-      { "<leader>p", group = "Lazy" },
-      { "<leader>pc", "<cmd>Lazy install<cr>", desc = "Install"},
-      { "<leader>ps", "<cmd>Lazy sync<cr>", desc = "Sync"},
-      { "<leader>pS", "<cmd>Lazy health<cr>", desc = "Health"},
-      { "<leader>pu", "<cmd>Lazy update<cr>", desc = "Update"},
+      { "<leader>p", group = "Packages(Lazy)" },
+      { "<leader>pl", "<cmd>Lazy<cr>", desc = "Lazy"},
+      { "<leader>pi", "<cmd>Lazy install<cr>", desc = "Lazy Install"},
+      { "<leader>ps", "<cmd>Lazy sync<cr>", desc = "Lazy Sync"},
+      { "<leader>ph", "<cmd>Lazy health<cr>", desc = "Lazy Health"},
+      { "<leader>pu", "<cmd>Lazy update<cr>", desc = "Lazy Update"},
+      { "<leader>pm", "<cmd>Lazy update<cr>", desc = "Mason"},
 
       -- LSP
       { "<leader>l", group = "LSP" },
