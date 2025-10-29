@@ -54,6 +54,7 @@ local mappings = {
       { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action"},
       { "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Definition"},
       { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Format"},
+      { "<leader>lr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "References"},
       { "<leader>lv",  function()
         vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines })
         end, desc = "Diagnostic Virtual Lines" },
