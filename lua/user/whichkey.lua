@@ -42,13 +42,12 @@ local mappings = {
       -- NvimTree
       { "<leader>k", "<cmd>:NvimTreeToggle<cr>", desc = "Nvim Tree", mode = "n" },
 
-      -- Packer
-      { "<leader>p", group = "Packer" },
-      { "<leader>pc", "<cmd>PackerCompile<cr>", desc = "Compile"},
-      { "<leader>pi", "<cmd>PackerInstall<cr>", desc = "Install"},
-      { "<leader>ps", "<cmd>PackerSync<cr>", desc = "Sync"},
-      { "<leader>pS", "<cmd>PackerStatus<cr>", desc = "Status"},
-      { "<leader>pu", "<cmd>PackerUpdate<cr>", desc = "Update"},
+      -- Lazy
+      { "<leader>p", group = "Lazy" },
+      { "<leader>pc", "<cmd>Lazy install<cr>", desc = "Install"},
+      { "<leader>ps", "<cmd>Lazy sync<cr>", desc = "Sync"},
+      { "<leader>pS", "<cmd>Lazy health<cr>", desc = "Health"},
+      { "<leader>pu", "<cmd>Lazy update<cr>", desc = "Update"},
 
       -- LSP
       { "<leader>l", group = "LSP" },
