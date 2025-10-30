@@ -24,6 +24,7 @@ local mappings = {
       { "<leader>c", group = "Code" },
       { "<leader>ca", "<cmd>AerialToggle!<cr>", desc = "Aerial", mode = "n" },
       { "<leader>ci", "<cmd>IBLToggle<cr>", desc = "Indent BlankLine", mode = "n" },
+      { "<leader>ct", "<cmd>%s/\\s\\+$//e<cr>", desc = "Trailing", mode = "n" },
 
       -- FILE
       { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
