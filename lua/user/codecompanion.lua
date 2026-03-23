@@ -110,7 +110,7 @@ local setup = ({
         },
         {
           role = "user",
-          content = "Fix the grammar mistake for this..."
+          content = "Fix grammar mistake for this..."
         }
       },
     }

@@ -23,30 +23,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
--- vim.cmd [[
---   augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost plugins.lua source <afile> | PackerSync
---   augroup end
--- ]]
---
--- -- Use a protected call so we don't error out on first use
--- local status_ok, packer = pcall(require, "packer")
--- if not status_ok then
---   return
--- end
---
--- -- Have packer use a popup window
--- packer.init {
---   display = {
---     open_fn = function()
---       return require("packer.util").float { border = "rounded" }
---     end,
---   },
--- }
-
-
 -- Install plugins here
 return require('lazy').setup({
   "nvim-lua/popup.nvim", -- an implementation of the popup api from vim in neovim
@@ -102,9 +78,6 @@ return require('lazy').setup({
   "sainnhe/gruvbox-material",
   "lunarvim/colorschemes",
 
-  -- marks
-  --"christianchiarulli/harpoon",
-
   -- lua development
   "nvim-lua/plenary.nvim", -- necessary for telescope
 
@@ -157,9 +130,6 @@ return require('lazy').setup({
   -- aerial
   "stevearc/aerial.nvim",
 
-  -- gen - ollama interface
-  -- "david-kunz/gen.nvim",
-
   -- coda companion
   {
     "olimorris/codecompanion.nvim",
@@ -172,8 +142,6 @@ return require('lazy').setup({
   -- mini.icons for which-key
   "echasnovski/mini.icons",
 
-
   -- indent blankline
   "lukas-reineke/indent-blankline.nvim",
-
 })
