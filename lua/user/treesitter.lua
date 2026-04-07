@@ -1,4 +1,4 @@
-local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
+local status_ok, treesitter = pcall(require, "nvim-treesitter.config")
 if not status_ok then
   vim.notify("Treesitter not loaded")
   return
@@ -115,4 +115,12 @@ treesitter.setup({
 
   },
   indent = { enable = true, disable = { "yaml" } },
+})
+
+-- Auto-update parsers on startup
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    require("nvim-treesitter.install").update({ with_sync = true })
+  end,
 })

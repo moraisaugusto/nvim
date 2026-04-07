@@ -43,6 +43,16 @@ local mappings = {
       -- NvimTree
       { "<leader>k", "<cmd>:NvimTreeToggle<cr>", desc = "Nvim Tree", mode = "n" },
 
+      -- Opencode
+      { "<leader>go", group = "Opencode" },
+      { "<leader>goa", "<cmd>lua Opencode.ask('@this: ', { submit = true })<cr>", desc = "Ask opencode", mode = { "n", "x" } },
+      { "<leader>gos", "<cmd>lua Opencode.select()<cr>", desc = "Execute opencode action", mode = { "n", "x" } },
+      { "<leader>got", "<cmd>lua Opencode.toggle()<cr>", desc = "Toggle opencode", mode = { "n", "t" } },
+      { "<leader>goc",  "<cmd>lua Opencode.operator('@this ')<cr>", desc = "Add range to opencode", mode = { "n", "x" } },
+      { "<leader>goo", "<cmd>lua Opencode.operator('@this ')..'_'<cr>", desc = "Add line to opencode", mode = "n" },
+      { "<leader>goj", "<cmd>lua Opencode.command('session.half.page.up')<cr>", desc = "Scroll opencode up", mode = "n" },
+      { "<leader>gok", "<cmd>lua Opencode.command('session.half.page.down')<cr>", desc = "Scroll opencode down", mode = "n" },
+
       -- Lazy
       { "<leader>p", group = "Packages(Lazy)" },
       { "<leader>pl", "<cmd>Lazy<cr>", desc = "Lazy"},
@@ -90,6 +100,7 @@ local mappings = {
 ----[[     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" }, ]]
 ----[[     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" }, ]]
 ----[[   }, ]]
+    
     }
 local opts = {}
 

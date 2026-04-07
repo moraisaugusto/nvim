@@ -105,10 +105,6 @@ return require('lazy').setup({
     "nvim-treesitter/nvim-treesitter",
     dependencies = { "OXY2DEV/markview.nvim" },
     lazy = false,
-    build = function()
-      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-      ts_update()
-    end,
   },
 
   -- surround
@@ -144,4 +140,38 @@ return require('lazy').setup({
 
   -- indent blankline
   "lukas-reineke/indent-blankline.nvim",
+
+  -- Snacks
+  -- {
+  --   "folke/snacks.nvim",
+  --   priority = 1000,
+  --   lazy = false,
+  --   ---@type snacks.Config
+  --   opts = {
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --     bigfile = { enabled = true },
+  --     dashboard = { enabled = false },
+  --     explorer = { enabled = true },
+  --     indent = { enabled = true },
+  --     input = { enabled = true },
+  --     picker = { enabled = true },
+  --     notifier = { enabled = true },
+  --     quickfile = { enabled = true },
+  --     scope = { enabled = true },
+  --     scroll = { enabled = true },
+  --     statuscolumn = { enabled = true },
+  --     words = { enabled = true },
+  --   },
+  -- },
+
+  -- Opencode
+  {
+    "nickjvandyke/opencode.nvim",
+    version = "*", -- Latest stable release
+    dependencies = { "folke/snacks.nvim" },
+  }
+
+
 })
