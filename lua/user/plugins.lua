@@ -170,11 +170,11 @@ return require('lazy').setup({
   -- },
 
   -- Opencode
-  {
-    "nickjvandyke/opencode.nvim",
-    version = "*", -- Latest stable release
-    dependencies = { "folke/snacks.nvim" },
-  }
+  -- {
+  --   "nickjvandyke/opencode.nvim",
+  --   version = "*", -- Latest stable release
+  --   dependencies = { "folke/snacks.nvim" },
+  -- }
 
 
 })

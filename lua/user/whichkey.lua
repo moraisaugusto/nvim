@@ -25,14 +25,14 @@ local mappings = {
       { "<leader>zc", "<cmd>CodeCompanionChat<cr>", desc = "LLM Chat", mode = "n" },
 
       -- Opencode
-      { "<leader>zo", group = "Opencode" },
-      { "<leader>zoa", "<cmd>lua Opencode.ask('@this: ', { submit = true })<cr>", desc = "Ask opencode", mode = { "n", "x" } },
-      { "<leader>zos", "<cmd>lua Opencode.select()<cr>", desc = "Execute opencode action", mode = { "n", "x" } },
-      { "<leader>zot", "<cmd>lua Opencode.toggle()<cr>", desc = "Toggle opencode", mode = { "n", "t" } },
-      { "<leader>zoc",  "<cmd>lua Opencode.operator('@this ')<cr>", desc = "Add range to opencode", mode = { "n", "x" } },
-      { "<leader>zoo", "<cmd>lua Opencode.operator('@this ')..'_'<cr>", desc = "Add line to opencode", mode = "n" },
-      { "<leader>zoj", "<cmd>lua Opencode.command('session.half.page.up')<cr>", desc = "Scroll opencode up", mode = "n" },
-      { "<leader>zok", "<cmd>lua Opencode.command('session.half.page.down')<cr>", desc = "Scroll opencode down", mode = "n" },
+      -- { "<leader>zo", group = "Opencode" },
+      -- { "<leader>zoa", "<cmd>lua Opencode.ask('@this: ', { submit = true })<cr>", desc = "Ask opencode", mode = { "n", "x" } },
+      -- { "<leader>zos", "<cmd>lua Opencode.select()<cr>", desc = "Execute opencode action", mode = { "n", "x" } },
+      -- { "<leader>zot", "<cmd>lua Opencode.toggle()<cr>", desc = "Toggle opencode", mode = { "n", "t" } },
+      -- { "<leader>zoc",  "<cmd>lua Opencode.operator('@this ')<cr>", desc = "Add range to opencode", mode = { "n", "x" } },
+      -- { "<leader>zoo", "<cmd>lua Opencode.operator('@this ')..'_'<cr>", desc = "Add line to opencode", mode = "n" },
+      -- { "<leader>zoj", "<cmd>lua Opencode.command('session.half.page.up')<cr>", desc = "Scroll opencode up", mode = "n" },
+      -- { "<leader>zok", "<cmd>lua Opencode.command('session.half.page.down')<cr>", desc = "Scroll opencode down", mode = "n" },
 
       -- CODE
       { "<leader>c", group = "Code" },
