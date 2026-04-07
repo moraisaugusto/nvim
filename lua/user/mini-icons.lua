@@ -4,4 +4,6 @@ if not status_ok then
   return
 end
 
-mini_icons.setup()
+mini_icons.setup({
+  diagnostics = { enabled = false }, -- Disable so handlers.lua controls signs
+})
