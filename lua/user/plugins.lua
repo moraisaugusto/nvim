@@ -1,4 +1,4 @@
-local fn = vim.fn
+-- local fn = vim.fn
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
