@@ -47,11 +47,15 @@ local mappings = {
 
       -- GIT
       { "<leader>g", group = "GIT"},
-      { "<leader>gst", "<cmd>Telescope git_status<cr>", desc = "Git status", mode = "n" },
+      { "<leader>gd", "<cmd>Gitsigns diffthis<cr>", desc = "Git diff (vimdiff)", mode = "n" },
+      { "<leader>gh", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk diff", mode = "n" },
+      { "<leader>gt", "<cmd>Telescope git_status<cr>", desc = "Git status", mode = "n" },
       { "<leader>gB", "<cmd>Gitsigns blame<cr>", desc = "Git blame", mode = "n" },
       { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Git blame line", mode = "n" },
       { "<leader>gn", "<cmd>Gitsigns next_hunk<cr>", desc = "Git next hunk", mode = "n" },
       { "<leader>gp", "<cmd>Gitsigns prev_hunk<cr>", desc = "Git prev hunk", mode = "n" },
+      { "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "Stage hunk", mode = "n" },
+      { "<leader>gS", "<cmd>Gitsigns stage_buffer<cr>", desc = "Stage file", mode = "n" },
       { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Git reset hunk", mode = "n" },
       { "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", desc = "Git reset buffer", mode = "n" },
 

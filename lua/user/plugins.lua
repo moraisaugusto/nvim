@@ -141,6 +141,9 @@ return require('lazy').setup({
   -- indent blankline
   "lukas-reineke/indent-blankline.nvim",
 
+  -- linting (mypy, etc.)
+  "mfussenegger/nvim-lint",
+
   -- Snacks
   -- {
   --   "folke/snacks.nvim",
