@@ -20,7 +20,7 @@ if snacks_ok then
       win = {
         input = {
           keys = {
-            ["<a-a>"] = { "opencode_send", mode = { "n", "i" } },
+            ["<a-z>"] = { "opencode_send", mode = { "n", "i" } },
           },
         },
       },

@@ -15,16 +15,31 @@ local mappings = {
         { "<leader>q", "<cmd>q<cr>", desc = "Quit" }, -- no need to specify mode since it's inherited
       },
 
+      -- Aerial Navigation (Overrides paragraph motion)
+      { "{", "<cmd>AerialPrev<cr>", desc = "Aerial Prev", mode = "n" },
+      { "}", "<cmd>AerialNext<cr>", desc = "Aerial Next", mode = "n" },
+
       -- AI - LLM
-      { "<leader>a", group = "AI Actions" },
-      { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "LLM Actions", mode = "n" },
-      { "<leader>ac", "<cmd>CodeCompanionChat<cr>", desc = "LLM Chat", mode = "n" },
+      { "<leader>z", group = "AI Actions" },
+      { "<leader>za", "<cmd>CodeCompanionActions<cr>", desc = "LLM Actions", mode = "n" },
+      { "<leader>zc", "<cmd>CodeCompanionChat<cr>", desc = "LLM Chat", mode = "n" },
+
+      -- Opencode
+      { "<leader>zo", group = "Opencode" },
+      { "<leader>zoa", "<cmd>lua Opencode.ask('@this: ', { submit = true })<cr>", desc = "Ask opencode", mode = { "n", "x" } },
+      { "<leader>zos", "<cmd>lua Opencode.select()<cr>", desc = "Execute opencode action", mode = { "n", "x" } },
+      { "<leader>zot", "<cmd>lua Opencode.toggle()<cr>", desc = "Toggle opencode", mode = { "n", "t" } },
+      { "<leader>zoc",  "<cmd>lua Opencode.operator('@this ')<cr>", desc = "Add range to opencode", mode = { "n", "x" } },
+      { "<leader>zoo", "<cmd>lua Opencode.operator('@this ')..'_'<cr>", desc = "Add line to opencode", mode = "n" },
+      { "<leader>zoj", "<cmd>lua Opencode.command('session.half.page.up')<cr>", desc = "Scroll opencode up", mode = "n" },
+      { "<leader>zok", "<cmd>lua Opencode.command('session.half.page.down')<cr>", desc = "Scroll opencode down", mode = "n" },
 
       -- CODE
       { "<leader>c", group = "Code" },
       { "<leader>ca", "<cmd>AerialToggle!<cr>", desc = "Aerial", mode = "n" },
       { "<leader>ci", "<cmd>IBLToggle<cr>", desc = "Indent BlankLine", mode = "n" },
       { "<leader>ct", "<cmd>%s/\\s\\+$//e<cr>", desc = "Trailing", mode = "n" },
+      { "<leader>cm", "<cmd>Markview toggle<cr>", desc = "Toggle Markview", mode = "n" },
 
       -- FILE
       { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
@@ -42,16 +57,6 @@ local mappings = {
 
       -- NvimTree
       { "<leader>k", "<cmd>:NvimTreeToggle<cr>", desc = "Nvim Tree", mode = "n" },
-
-      -- Opencode
-      { "<leader>go", group = "Opencode" },
-      { "<leader>goa", "<cmd>lua Opencode.ask('@this: ', { submit = true })<cr>", desc = "Ask opencode", mode = { "n", "x" } },
-      { "<leader>gos", "<cmd>lua Opencode.select()<cr>", desc = "Execute opencode action", mode = { "n", "x" } },
-      { "<leader>got", "<cmd>lua Opencode.toggle()<cr>", desc = "Toggle opencode", mode = { "n", "t" } },
-      { "<leader>goc",  "<cmd>lua Opencode.operator('@this ')<cr>", desc = "Add range to opencode", mode = { "n", "x" } },
-      { "<leader>goo", "<cmd>lua Opencode.operator('@this ')..'_'<cr>", desc = "Add line to opencode", mode = "n" },
-      { "<leader>goj", "<cmd>lua Opencode.command('session.half.page.up')<cr>", desc = "Scroll opencode up", mode = "n" },
-      { "<leader>gok", "<cmd>lua Opencode.command('session.half.page.down')<cr>", desc = "Scroll opencode down", mode = "n" },
 
       -- Lazy
       { "<leader>p", group = "Packages(Lazy)" },
@@ -105,8 +110,6 @@ local mappings = {
 local opts = {}
 
 which_key.add(mappings)
-
-
 
 which_key.setup(setup)
 --which_key.register(mappings)
