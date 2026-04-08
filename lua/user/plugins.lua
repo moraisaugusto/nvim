@@ -103,8 +103,14 @@ return require('lazy').setup({
   -- treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = { "OXY2DEV/markview.nvim" },
-    lazy = false,
+  },
+
+  -- render markdown
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" },
+    ft = { "markdown", "codecompanion" },
+    event = "VeryLazy",
   },
 
   -- surround

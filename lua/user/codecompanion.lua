@@ -4,24 +4,15 @@ if not status_ok then
   return
 end
 
-local setup = ({
-  display = {
-    diff = {
-      enabled = true,
-      close_chat_at = 240,  -- Close an open chat buffer if the total columns of your display are less than...
-      layout = "vertical",  -- vertical|horizontal split for default provider
-      opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
-      provider = "inline", -- inline|mini_diff|split
-    },
-  },
+codecompanion.setup({
   adapters = {
     http = {
-      deepseek = function()
+      qwen3_moe = function()
         return require("codecompanion.adapters").extend("ollama", {
-          name = "deepseek-coder-v2",
+          name = "qwen3-moe",
           schema = {
             model = {
-              default = "deepseek-coder-v2",
+              default = "qwen3-moe-opt:30b",
             },
             num_ctx = {
               default = 16384,
@@ -29,44 +20,33 @@ local setup = ({
             num_predict = {
               default = -1,
             },
-          },
-        })
-      end,
-
-      qwen3_coder = function()
-        return require("codecompanion.adapters").extend("ollama", {
-          name = "qwen3",
-          opts = {
-            vision = true,
-            stream = true,
-          },
-          schema = {
-            model = {
-              default = "qwen3-coder:30b",
-            },
-            num_ctx = {
-              default = 16384,
-            },
-            think = {
-              default = false,
-            },
             keep_alive = {
-              default = "5m",
+              default = "10m",
             },
           },
         })
       end,
     },
   },
-
   strategies = {
     chat = {
+      adapter = "qwen3_moe",
+      tools = {
+        read_file = {
+          opts = {
+            require_approval_before = false,
+          },
+        },
+        grep_search = {
+          opts = {
+            require_approval_before = false,
+          },
+        },
+      },
       icons = {
         pinned_buffer = " ",
         watched_buffer = "- ",
       },
-      adapter = "qwen3_coder",
-
       keymaps = {
         send = {
           models = { n = "<C-s>", i = "<C-s>" },
@@ -77,7 +57,7 @@ local setup = ({
       },
     },
     inline = {
-      adapter = "qwen3_coder",
+      adapter = "qwen3_moe",
       keymaps = {
         accept_change = {
           models = { n = "<leader>ca" },
@@ -89,32 +69,26 @@ local setup = ({
         },
       },
     },
-    cmd = {
-      adapter = "qwen3_coder",
-    }
-  },
-  prompt_library = {
-    ["Better grammar"] = {
-      strategy = "chat",
-      description = "Fix grammar phrases",
-      opts = {
-        index = 11,
-        is_slash_cmd = false,
-        auto_submit = true,
-        short_name = "docs",
-      },
-      prompts = {
-        {
-          role = "system",
-          content = "You are an english teacher and your main task is to fix grammar mistakes. You will just fix the grammar phrase with no explanation. Just after the correction of grammar phrase, you might add a very short explanation.",
+    agent = {
+      adapter = "qwen3_moe",
+      tools = {
+        python = {
+          callback = "codecompanion.tools.python",
+          description = "Execute Python code in a Jupyter notebook environment",
+          opts = {
+            user_approval = true,
+          },
         },
-        {
-          role = "user",
-          content = "Fix grammar mistake for this..."
-        }
       },
-    }
-  }
+    },
+  },
+  display = {
+    diff = {
+      enabled = true,
+      close_chat_at = 240,
+      layout = "vertical",
+      opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
+      provider = "inline",
+    },
+  },
 })
-
-codecompanion.setup(setup)
