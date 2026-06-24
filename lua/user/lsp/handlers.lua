@@ -61,7 +61,9 @@ M.on_attach = function(client, bufnr)
   end
   client.server_capabilities.documentFormattingProvider = true
 --  lsp_keymaps(bufnr)
-  lsp_highlight_document(bufnr)
+  if client.server_capabilities.documentHighlightProvider then
+    lsp_highlight_document(bufnr)
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
