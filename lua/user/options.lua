@@ -1,4 +1,5 @@
 local options = {
+  background = "dark",                     -- never trust terminal auto-detect (OSC 11); gruvbox-material follows this
   backup = false,                          -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
